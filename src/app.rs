@@ -22,9 +22,22 @@ pub fn App(cx: Scope) -> impl IntoView {
             <main>
                 <Routes>
                     <Route path="" view=|cx| view! { cx, <HomePage/> }/>
+                    <Route path="/test" view=|cx| view! { cx, <TestPage/> }/>
                 </Routes>
             </main>
         </Router>
+    }
+}
+
+#[component]
+fn TestPage(cx: Scope) -> impl IntoView {
+    let (count, set_count) = create_signal(cx, 0);
+    view! {
+        cx,
+        <div>
+        <h1>"Test page"</h1>
+        <p>"second"</p>
+        </div>
     }
 }
 
