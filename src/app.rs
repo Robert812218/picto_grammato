@@ -18,25 +18,108 @@ pub fn App(cx: Scope) -> impl IntoView {
         <Title text="Welcome to Leptos"/>
 
         // content for this welcome page
+        <div>
         <Router>
             <main>
                 <Routes>
                     <Route path="" view=|cx| view! { cx, <HomePage/> }/>
-                    <Route path="/test" view=|cx| view! { cx, <TestPage/> }/>
+                    <Route path="/login-register" view=|cx| view! { cx, <LoginRegister/> }
+                    <Route path="/account" view=|cx| view! {<Account/>}/>
+                    <Route path="/profile" view=|cx| view! {<Profile/>}/>
+                    <Route path="/notifications" view=|cx| view! {<Notifications/>}/>
+                    <Route path="/messsages" view=|cx| view! {<Messages/>}/>
                 </Routes>
             </main>
         </Router>
+        </div>
     }
 }
 
 #[component]
-fn TestPage(cx: Scope) -> impl IntoView {
+fn NavBar(cx: Scope) -> impl IntoView {
     let (count, set_count) = create_signal(cx, 0);
+    let on_click = move |_| set_count.update(|count| *count += 1);
+
     view! {
         cx,
         <div>
-        <h1>"Test page"</h1>
-        <p>"second"</p>
+            // Create Account
+            <a href="">"HOME"</a>
+            <a href="/account">"ACCOUNT"</a>
+            <a href="/login-register">"LOGIN/REGISTER"</a>
+            <a href="/profile">"PROFILE"</a>
+            <a href="/notifications">"NOTIFICATIONS"</a>
+            <a href="/messages">"MESSAGES"</a>
+        </div>
+    }
+}
+
+#[component]
+fn LoginRegister(cx: Scope) -> impl IntoView {
+    let (count, set_count) = create_signal(cx, 0);
+    let on_click = move |_| set_count.update(|count| *count += 1);
+
+    view! {
+        cx,
+        <div>
+            <h1>"AA"</h1>
+
+        </div>
+    }
+}
+
+#[component]
+fn Account(cx: Scope) -> impl IntoView {
+    let (count, set_count) = create_signal(cx, 0);
+    let on_click = move |_| set_count.update(|count| *count += 1);
+
+    view! {
+        cx,
+        <div>
+            <h1>"AA"</h1>
+
+        </div>
+    }
+}
+
+#[component]
+fn Profile(cx: Scope) -> impl IntoView {
+    let (count, set_count) = create_signal(cx, 0);
+    let on_click = move |_| set_count.update(|count| *count += 1);
+
+    view! {
+        cx,
+        <div>
+            <h1>"AA"</h1>
+
+        </div>
+    }
+}
+
+#[component]
+fn Notifications(cx: Scope) -> impl IntoView {
+    let (count, set_count) = create_signal(cx, 0);
+    let on_click = move |_| set_count.update(|count| *count += 1);
+
+    view! {
+        cx,
+        <div>
+            <h1>"AA"</h1>
+
+        </div>
+    }
+}
+
+#[component]
+fn Messages(cx: Scope) -> impl IntoView {
+    let (count, set_count) = create_signal(cx, 0);
+    let on_click = move |_| set_count.update(|count| *count += 1);
+
+    view! {
+        cx,
+        <div>
+            <h1>"MESSAGES"</h1>
+
         </div>
     }
 }
@@ -48,8 +131,14 @@ fn HomePage(cx: Scope) -> impl IntoView {
     let (count, set_count) = create_signal(cx, 0);
     let on_click = move |_| set_count.update(|count| *count += 1);
 
+    
+
     view! { cx,
-        <h1>"Welcome to Leptos!"</h1>
-        <button on:click=on_click>"Click Me: " {count}</button>
+        <div>
+        <NavBar/>        
+            <h1>"Picto-Grammoni"</h1>
+
+            <button on:click=on_click>"Click Me: " {count}</button>
+        </div>
     }
 }
