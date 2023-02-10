@@ -22,12 +22,12 @@ pub fn App(cx: Scope) -> impl IntoView {
         <Router>
             <main>
                 <Routes>
-                    <Route path="" view=|cx| view! { cx, <HomePage/> }/>
-                    <Route path="/login-register" view=|cx| view! { cx, <LoginRegister/> }
-                    <Route path="/account" view=|cx| view! {<Account/>}/>
-                    <Route path="/profile" view=|cx| view! {<Profile/>}/>
-                    <Route path="/notifications" view=|cx| view! {<Notifications/>}/>
-                    <Route path="/messsages" view=|cx| view! {<Messages/>}/>
+                    <Route path="/" view=|cx| view! { cx, <HomePage/> }/>
+                    <Route path="/login-register" view=|cx| view! { cx, <LoginRegister/> }/>
+                    <Route path="/account" view=|cx| view! { cx, <Account/> }/>
+                    <Route path="/profile" view=|cx| view! { cx, <Profile/> }/>
+                    <Route path="/notifications" view=|cx| view! { cx, <Notifications/> }/>
+                    <Route path="/messages" view=|cx| view! { cx, <Messages/> }/>
                 </Routes>
             </main>
         </Router>
@@ -38,13 +38,13 @@ pub fn App(cx: Scope) -> impl IntoView {
 #[component]
 fn NavBar(cx: Scope) -> impl IntoView {
     let (count, set_count) = create_signal(cx, 0);
-    let on_click = move |_| set_count.update(|count| *count += 1);
+    // let on_click = move |_| set_count.update(|count| *count += 1);
 
     view! {
         cx,
         <div>
             // Create Account
-            <a href="">"HOME"</a>
+            <a href="/">"HOME"</a>
             <a href="/account">"ACCOUNT"</a>
             <a href="/login-register">"LOGIN/REGISTER"</a>
             <a href="/profile">"PROFILE"</a>
@@ -57,13 +57,14 @@ fn NavBar(cx: Scope) -> impl IntoView {
 #[component]
 fn LoginRegister(cx: Scope) -> impl IntoView {
     let (count, set_count) = create_signal(cx, 0);
-    let on_click = move |_| set_count.update(|count| *count += 1);
+    // let on_click = move |_| set_count.update(|count| *count += 1);
 
     view! {
         cx,
         <div>
-            <h1>"AA"</h1>
-
+            <NavBar/>
+            <h1>"Login/Register"</h1>
+            
         </div>
     }
 }
@@ -71,12 +72,13 @@ fn LoginRegister(cx: Scope) -> impl IntoView {
 #[component]
 fn Account(cx: Scope) -> impl IntoView {
     let (count, set_count) = create_signal(cx, 0);
-    let on_click = move |_| set_count.update(|count| *count += 1);
+    // let on_click = move |_| set_count.update(|count| *count += 1);
 
     view! {
         cx,
         <div>
-            <h1>"AA"</h1>
+            <NavBar/>
+            <h1>"Account"</h1>
 
         </div>
     }
@@ -85,13 +87,14 @@ fn Account(cx: Scope) -> impl IntoView {
 #[component]
 fn Profile(cx: Scope) -> impl IntoView {
     let (count, set_count) = create_signal(cx, 0);
-    let on_click = move |_| set_count.update(|count| *count += 1);
+    // let on_click = move |_| set_count.update(|count| *count += 1);
 
     view! {
         cx,
         <div>
-            <h1>"AA"</h1>
-
+            <NavBar/>
+            <h1>"Profile"</h1>
+            
         </div>
     }
 }
@@ -99,12 +102,13 @@ fn Profile(cx: Scope) -> impl IntoView {
 #[component]
 fn Notifications(cx: Scope) -> impl IntoView {
     let (count, set_count) = create_signal(cx, 0);
-    let on_click = move |_| set_count.update(|count| *count += 1);
+    // let on_click = move |_| set_count.update(|count| *count += 1);
 
     view! {
         cx,
         <div>
-            <h1>"AA"</h1>
+            <NavBar/>
+            <h1>"Notifications"</h1>
 
         </div>
     }
@@ -113,11 +117,12 @@ fn Notifications(cx: Scope) -> impl IntoView {
 #[component]
 fn Messages(cx: Scope) -> impl IntoView {
     let (count, set_count) = create_signal(cx, 0);
-    let on_click = move |_| set_count.update(|count| *count += 1);
+    // let on_click = move |_| set_count.update(|count| *count += 1);
 
     view! {
         cx,
         <div>
+            <NavBar/>
             <h1>"MESSAGES"</h1>
 
         </div>
@@ -129,7 +134,7 @@ fn Messages(cx: Scope) -> impl IntoView {
 fn HomePage(cx: Scope) -> impl IntoView {
     // Creates a reactive value to update the button
     let (count, set_count) = create_signal(cx, 0);
-    let on_click = move |_| set_count.update(|count| *count += 1);
+    // let on_click = move |_| set_count.update(|count| *count += 1);
 
     
 
@@ -138,7 +143,10 @@ fn HomePage(cx: Scope) -> impl IntoView {
         <NavBar/>        
             <h1>"Picto-Grammoni"</h1>
 
-            <button on:click=on_click>"Click Me: " {count}</button>
+            <div>
+                // feed of pics in here 
+            </div>
+            // <button on:click=on_click>"Click Me: " {count}</button>
         </div>
     }
 }
