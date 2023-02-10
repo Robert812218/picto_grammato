@@ -2,6 +2,9 @@ use leptos::*;
 use leptos_meta::*;
 use leptos_router::*;
 
+mod routes;
+use routes::navbar::*;
+
 #[component]
 pub fn App(cx: Scope) -> impl IntoView {
     // Provides context that manages stylesheets, titles, meta tags, etc.
@@ -35,29 +38,29 @@ pub fn App(cx: Scope) -> impl IntoView {
     }
 }
 
-#[component]
-fn NavBar(cx: Scope) -> impl IntoView {
-    let (count, set_count) = create_signal(cx, 0);
-    // let on_click = move |_| set_count.update(|count| *count += 1);
-
-    view! {
-        cx,
-        <div>
-            // Create Account
-            <a href="/">"HOME"</a>
-            <a href="/account">"ACCOUNT"</a>
-            <a href="/login-register">"LOGIN/REGISTER"</a>
-            <a href="/profile">"PROFILE"</a>
-            <a href="/notifications">"NOTIFICATIONS"</a>
-            <a href="/messages">"MESSAGES"</a>
-        </div>
-    }
-}
+// #[component]
+// fn NavBar(cx: Scope) -> impl IntoView {
+//     let (_count, _set_count,) = create_signal(cx, 0);
+//     // let on_click = move |_| _set_count,.update(|count| *count += 1);
+// 
+//     view! {
+//         cx,
+//         <div>
+//             // Create Account
+//             <a href="/">"HOME"</a>
+//             <a href="/account">"ACCOUNT"</a>
+//             <a href="/login-register">"LOGIN/REGISTER"</a>
+//             <a href="/profile">"PROFILE"</a>
+//             <a href="/notifications">"NOTIFICATIONS"</a>
+//             <a href="/messages">"MESSAGES"</a>
+//         </div>
+//     }
+// }
 
 #[component]
 fn LoginRegister(cx: Scope) -> impl IntoView {
-    let (count, set_count) = create_signal(cx, 0);
-    // let on_click = move |_| set_count.update(|count| *count += 1);
+    let (_count, _set_count,) = create_signal(cx, 0);
+    // let on_click = move |_| _set_count,.update(|count| *count += 1);
 
     view! {
         cx,
@@ -71,8 +74,8 @@ fn LoginRegister(cx: Scope) -> impl IntoView {
 
 #[component]
 fn Account(cx: Scope) -> impl IntoView {
-    let (count, set_count) = create_signal(cx, 0);
-    // let on_click = move |_| set_count.update(|count| *count += 1);
+    let (_count, _set_count,) = create_signal(cx, 0);
+    // let on_click = move |_| _set_count,.update(|count| *count += 1);
 
     view! {
         cx,
@@ -86,8 +89,8 @@ fn Account(cx: Scope) -> impl IntoView {
 
 #[component]
 fn Profile(cx: Scope) -> impl IntoView {
-    let (count, set_count) = create_signal(cx, 0);
-    // let on_click = move |_| set_count.update(|count| *count += 1);
+    let (_count, _set_count,) = create_signal(cx, 0);
+    // let on_click = move |_| _set_count,.update(|count| *count += 1);
 
     view! {
         cx,
@@ -101,8 +104,8 @@ fn Profile(cx: Scope) -> impl IntoView {
 
 #[component]
 fn Notifications(cx: Scope) -> impl IntoView {
-    let (count, set_count) = create_signal(cx, 0);
-    // let on_click = move |_| set_count.update(|count| *count += 1);
+    let (_count, _set_count,) = create_signal(cx, 0);
+    // let on_click = move |_| _set_count,.update(|count| *count += 1);
 
     view! {
         cx,
@@ -116,8 +119,8 @@ fn Notifications(cx: Scope) -> impl IntoView {
 
 #[component]
 fn Messages(cx: Scope) -> impl IntoView {
-    let (count, set_count) = create_signal(cx, 0);
-    // let on_click = move |_| set_count.update(|count| *count += 1);
+    let (_count, _set_count,) = create_signal(cx, 0);
+    // let on_click = move |_| _set_count,.update(|count| *count += 1);
 
     view! {
         cx,
@@ -133,8 +136,8 @@ fn Messages(cx: Scope) -> impl IntoView {
 #[component]
 fn HomePage(cx: Scope) -> impl IntoView {
     // Creates a reactive value to update the button
-    let (count, set_count) = create_signal(cx, 0);
-    // let on_click = move |_| set_count.update(|count| *count += 1);
+    let (_count, _set_count,) = create_signal(cx, 0);
+    // let on_click = move |_| _set_count,.update(|count| *count += 1);
 
     
 
@@ -144,7 +147,8 @@ fn HomePage(cx: Scope) -> impl IntoView {
             <h1>"Picto-Grammoni"</h1>
 
             <div>
-                // feed of pics in here 
+                // feed of pics in here
+                
             </div>
             // <button on:click=on_click>"Click Me: " {count}</button>
         </div>
